@@ -1,10 +1,10 @@
 from django.urls.conf import path
-
-from .views import AskQuestionView, QuestionDetailView, CreateAnswerView, UpdateAcceptanceAnswer, DailyQuestionList
+from .views import AskQuestionView, QuestionDetailView, CreateAnswerView, UpdateAcceptanceAnswer, DailyQuestionList, TodaysQuestionList
 
 app_name = 'qanda'
 
 urlpatterns = [
+    path('', TodaysQuestionList.as_view(), name='index'),
     path('ask', AskQuestionView.as_view(), name='ask'),
     path('q/<int:pk>', QuestionDetailView.as_view(), name='question_detail'),
     path('q/<int:pk>/answer', CreateAnswerView.as_view(), name='answer_question'),

@@ -31,10 +31,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'crispy_forms',
-    'markdownify',
     'qanda',
     'user',
+    'crispy_forms',
+    'markdownify',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -140,3 +140,6 @@ MARKDOWNIFY_WHITELIST_TAGS = [
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+LOGIN_URL = "user:login"
+LOGIN_REDIRECT_URL = 'questions:index'
+LOGOUT_REDIRECT_URL = 'questions:index'
